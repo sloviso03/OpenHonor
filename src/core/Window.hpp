@@ -8,3 +8,4 @@ class Window {
 
         bool ShouldClose() const;
 };
+

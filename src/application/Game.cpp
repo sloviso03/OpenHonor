@@ -27,7 +27,7 @@ void Game::Draw() {
     m_world.Draw();
     m_camera.EndMode();
 
-    DrawText("+", GetScreenWidth() / 2 - 5, GetScreenHeight() / 2 - 8, 20, WHITE);
+    DrawText(".", GetScreenWidth() / 2 - 5, GetScreenHeight() / 2 - 8, 20, WHITE);
 
     EndDrawing();
 }

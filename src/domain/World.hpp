@@ -1,14 +1,7 @@
 #pragma once
 #include "raylib.h"
+#include "Column.hpp"
 #include <array>
-
-
-struct Column {
-    Vector3 position;
-    float height;
-    Color color;
-};
-
 
 class World {
     public:

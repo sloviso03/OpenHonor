@@ -9,7 +9,22 @@ FPSCamera::FPSCamera() {
 }
 
 void FPSCamera::Update() {
-    UpdateCamera(&m_camera, CAMERA_FIRST_PERSON);
+    float speed = IsKeyDown(KEY_LEFT_SHIFT) ? RUN_SPEED : WALK_SPEED;
+
+    UpdateCameraPro(
+        &m_camera,
+        {
+            (IsKeyDown(KEY_W) ? speed : 0.0f) - (IsKeyDown(KEY_S) ? speed : 0.0f),
+            (IsKeyDown(KEY_D) ? speed : 0.0f) - (IsKeyDown(KEY_A) ? speed : 0.0f),
+            0.0f
+        },
+        {
+            GetMouseDelta().x * MOUSE_SENSITIVITY,
+            GetMouseDelta().y * MOUSE_SENSITIVITY,
+            0.0f
+        },
+        0.0f
+    );
 }
  
 void FPSCamera::BeginMode() const {
